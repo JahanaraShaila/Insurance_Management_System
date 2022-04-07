@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Error</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<!-- Loading third party fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
+	rel="stylesheet" type="text/css">
+<link href="/fonts/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+<link href="/fonts/lineo-icon/style.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Loading main css file -->
+<link rel="stylesheet" href="/css/style.css">
+
+<style type="text/css">
+li:hover {
+	background-color: blue;
+	border-radius: 30px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="site-content">
+		<header class="site-header">
+			<div class="top-header" style="background-color: activecaption;">
+
+				<div class="container">
+					<a href="#" id="branding"> <img src="/images/logo.png"
+						alt="Company Name" class="logo">
+						<div class="logo-text" style="margin-top: 10px">
+							<h1 class="site-title" style="font-size: 29px;">MetLife</h1>
+							<h3>Insurance Company Ltd.</h3>
+						</div>
+					</a>
+					<!-- #branding -->
+
+					<div class="right-section pull-right"
+						style="margin-top: -10px; margin-left: 40px">
+						<!-- <h2 style="color: #0056B3">Cutomer Panel<br> Customer_No: <span th:text="${id}"></span></h2> -->
+						<!-- <button class="btn btn-danger" ><a href="logout" class="text-white">Logout</a></button> -->
+
+						<!-- 
+						<form method="get" action="#" th:action="@{/logout}"
+							onsubmit="return confirm('Are you sure?');">
+							<button class="btn btn-danger" style="margin-left: 20px" type="submit" value='log'>Logout</button>
+						</form> -->
+
+						<!-- <a class="btn btn-danger" th:href="@{/logout}">Logout</a> -->
+					</div>
+					<div class="right-section pull-right" style="margin-top: 25px">
+						<a href="#" class="phone"
+							style="font-size: 15px; font-weight: bold"><img
+							src="/images/icon-phone.png" class="icon">+00801533626579</a>
+						<br>
+						<!--<form action="#" class="search-form">
+								<input type="text" placeholder="Search...">
+								<button type="submit"><img src="images/icon-search.png" alt=""></button>
+							</form>-->
+						<div class="social-links" style="margin-top: 5px">
+							<a href="#"><i class="fa fa-facebook text-info"></i></a> <a
+								href="#"><i class="fa fa-twitter text-info"></i></a> <a href="#"><i
+								class="fa fa-google-plus text-info"></i></a> <a href="#"><i
+								class="fa fa-pinterest text-info"></i></a>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- .container -->
+			</div>
+			<!-- .top-header -->
+
+			<!-- <p>this<span th:text="${id}"></span></p> -->
+			<!-- 2nd-header -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+						<div class="collapse navbar-collapse"
+					style="font-weight: bold; font-size: 20px; "
+					id="navbarNavDropdown">
+					<ul class="navbar-nav" style="margin-left: 30px">
+						
+						<li class="nav-item" style="margin-left: 40px"><button  class="nav-link btn btn-danger" 
+							style="color: white" onclick="history.back()">Go Back!</button></li>	
+						<!-- <li class="nav-item" style="margin-left: 40px"><a class="nav-link" href="#" th:href="@{/customer/addprim/{id}(id=${id})}"
+							style="color: white">Add Primiuam</a></li>
+						<li class="nav-item" style="margin-left: 40px"><a class="nav-link" th:href="@{/agent/myCustomers/{id}(id=${id})}"
+							style="color: white">Customer Details</a></li>
+						<li class="nav-item" style="margin-left: 40px"><a class="nav-link" href="customerdetails"
+							style="color: white">Customer Details</a></li> -->
+
+					</ul>
+				</div>
+			</nav>
+		</header>
+	</div>
+
+	<!-- .site-header -->
+	
+	
+	<div class="text-center text-danger" style="margin-top: 15px">
+	<h1 class="">Error <span th:text="${status}"></span> !</h1>
+	<h2  th:if="${status}=='400'"> Bad Request, The request was invalid.</h2>
+	<h2  th:if="${status}=='401'"> Unauthorized, The request did not include an authentication
+					 token or the authentication token was expired..</h2>
+	<h2  th:if="${status}=='403'"> Forbidden, The client did not have permission to access the requested resource.</h2>
+	<h2  th:if="${status}=='404'"> Not Found, The requested resource was not found..</h2>
+	<h2  th:if="${status}=='500'"> Internal Server Error, The request was not completed due to an internal error on the server side.</h2>
+	</div>
+	
+	
+	
+	</body>
+	</html>

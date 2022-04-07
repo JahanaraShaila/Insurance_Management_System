@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>C-CustomerForm</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<!-- Loading third party fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
+	rel="stylesheet" type="text/css">
+<link href="/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+
+<!-- Loading main css file -->
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="background-image: url('/images/new images/insurancebg.jpg');
+	  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;"
+  >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 "
+				style="background-color: white; margin-top: 5px; opacity: 0.9;color:black;font-weight: bold;border: olive solid 5px; padding-bottom: 10px">
+				<form  th:action="@{/agent/saveCustomer}"  method="post" style="padding: 10px;" >
+					<h1 class="text-center " style="padding-top: 10px; ">
+						<b>Customer Registration <i class="fas fa-user-plus"></i></b>
+					</h1>
+					
+					
+					
+				<!-- form submit massage -->
+					<div class="text-center">
+					<h3 th:if="${valid!=null}" class="text-success"><span th:text="${valid}"></span></h3>
+					<h3 th:if="${invalid!=null}" class="text-danger"><span th:text="${invalid}"></span></h3>
+					</div>
+				<!-- form submit massage -->
+					
+					
+					
+					<div class="form-group col-md-12">
+						<label for="exampleInputname">Customer Name</label> <input
+							type="text" class="form-control" name="custname"
+							
+							id="exampleInputname" 
+							placeholder="Enter Name"> 
+					</div>
+					
+					<div class="form-group col-md-12">
+						<label for="address">Customer Address</label> <input
+							type="text" class="form-control" name="custaddress"
+							id="address" 
+							placeholder="Enter Address"> 
+					</div>
+					
+					
+							
+					<div class="form-group col-sm-12">
+						<label for="exampleInputEmail1">Email</label> <input
+							type="email" class="form-control" 
+							 name="custemail"
+							id="exampleInputEmail1" aria-describedby="emailHelp"
+							placeholder="Enter email"> <small id="emailHelp"
+							class="form-text text-muted"></small>
+					</div>
+					
+					<div class="form-group col-md-6 col-sm-12">
+						<label for="number">Mobile Number</label> <input
+							type="text" class="form-control" name="custnumber"
+							
+							id="number" 
+							placeholder="Enter Mobile Number"> 
+					</div>
+			
+					
+					<div class="form-group col-md-6 col-sm-12">
+						<label for="exampleInputPassword1">Password</label> <input
+							type="password" class="form-control" name="custpassword"
+						
+							id="exampleInputPassword1" placeholder="Password">
+					</div>
+					
+				
+					
+					<div class="form-group col-md-6 col-sm-12">
+					<label for="gendr">Gender</label>
+					<select class="form-control" name="custgender" id="gendr" style="color: black;">
+					<option>Male</option>
+					<option>Female</option>
+					<option>Other</option>
+					</select>
+					</div>
+					
+					
+					<div class="form-group col-md-6 col-sm-12">
+					<label for="policy">Policy Type</label>
+					<select class="form-control" name="policytype" id="policy" style="color: black;" >
+					<option>Life Insurance</option>
+					<option>Health Insurance</option>
+					<option>Child Insurance</option>
+					<option>Hazz Insurance</option>
+					<option>Pension Insurance</option>
+					<option>Education Insurance</option>
+					<option>Denmahar Insurance</option>
+					</select>
+					</div>
+					
+					
+					<div class="form-group col-md-6 col-sm-12">
+						<label for="tk">Policy Amount</label>
+					 	<input type="text" class="form-control" name="policyAmount"
+						id="tk" placeholder="Provide Policy amount">
+					</div>	
+					
+					<div class="form-group col-md-6 col-sm-12">
+						<label for="agid">Agent id</label>
+					 	<input type="text" class="form-control" name="agent.id"
+						id="agid" placeholder="Provide Policy amount"  th:value="${id}" readonly="readonly">
+					</div>
+	
+				<!-- 	<div class="form-group col-md-6 col-sm-12">
+					<label for="sgid">Agent Id</label>
+					<select  class="form-control" name="agent.id" id="agid" style="color: black;" >
+					<option>Select</option>
+					<option th:each="agntId :${allagntid}"  th:text="${agntId.getId()}"></option>
+					</select>
+					</div> -->
+					
+
+					
+					<div class="form-group col-md-6 col-sm-12">
+					<label for="method">Premium Method</label>
+					<select class="form-control" name="prim_method" id="method" style="color: black;">
+					<option>Half Yearly</option>
+					<option>Yearly</option>
+					</select>
+					</div>
+					
+					
+					
+					<div class="form-group col-md-6 col-sm-12">
+						<label for="duration">Policy Duration</label> 
+						<select class="form-control" name="duration" id="duration" style="color: black;">
+						<option>8</option>
+						<option>10</option>
+						<option>12</option>
+						<option>15</option>
+						<option>20</option>
+					</select>
+					</div>
+					
+					
+					
+					<div>
+					<input type="text" name="payed_prim" value="0" hidden="true">
+					<input type="text" name="account" value="0" hidden="true"> 
+					<input type="text" value="pending" name="position" hidden="true">
+					</div>
+				
+					
+					
+					
+					<div class="col-md-6 col-sm-12  text-right">
+						<button type="submit"  class="btn btn-primary text-center">Submit</button>
+						
+					</div>
+
+				</form>
+				<div class="col-md-6 col-sm-12">
+				<a class="btn btn-danger" th:href="@{/agent/back}" style="color: white;font-weight: bold;font-size: 16px" id="go-back">Cancel</a>
+			</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script
+		src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

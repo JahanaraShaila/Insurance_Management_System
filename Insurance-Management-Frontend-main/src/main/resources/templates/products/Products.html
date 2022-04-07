@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Insurance</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<!-- Loading third party fonts -->
+<link
+	href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|"
+	rel="stylesheet" type="text/css">
+<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
+
+<!-- Loading main css file -->
+<link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+.navbar-nav li:hover {
+	background-color: blue;
+	border-radius: 30px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="site-content">
+		<header class="site-header">
+			<div class="top-header" style="background-color: activecaption;">
+
+				<div class="container">
+					<a href="#" id="branding"> <img src="images/logo.png"
+						alt="Company Name" class="logo">
+						<div class="logo-text" style="margin-top: 10px">
+							<h1 class="site-title" style="font-size: 29px;">MetLife</h1>
+							<h3>Insurance Company Limited</h3>
+						</div>
+					</a>
+					<!-- #branding -->
+
+					<!-- #Login dropdown -->
+					<div class="right-section pull-right"
+						style="margin-top: 20px; margin-left: 40px">
+						<div class="input-group-prepend">
+							<button class="btn btn-outline-secondary dropdown-toggle "
+								style="width: 150px; background-color: green; color: white;"
+								type="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Login With</button>
+
+							<div class="dropdown-menu " style="background-color: green;">
+								<a class="dropdown-item" href="adminlogin"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Admin</a>
+								<a class="dropdown-item" href="agentlogForm"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Agent</a>
+								<a class="dropdown-item" href="userlogForm"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">User</a>
+							</div>
+						</div>
+
+					</div>
+					<!-- #login dropdown -->
+
+					<div class="right-section pull-right" style="margin-top: 25px">
+						<a href="#" class="phone"
+							style="font-size: 15px; font-weight: bold"><img
+							src="images/icon-phone.png" class="icon">+00801533626579</a> <br>
+						<!--<form action="#" class="search-form">
+								<input type="text" placeholder="Search...">
+								<button type="submit"><img src="images/icon-search.png" alt=""></button>
+							</form>-->
+						<div class="social-links" style="margin-top: 5px">
+							<a href="#"><i class="fa fa-facebook text-info"></i></a> <a
+								href="#"><i class="fa fa-twitter text-info"></i></a> <a href="#"><i
+								class="fa fa-google-plus text-info"></i></a> <a href="#"><i
+								class="fa fa-pinterest text-info"></i></a>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- .container -->
+			</div>
+			<!-- .top-header -->
+			
+			
+			
+
+			<!-- 2nd-header -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse"
+					style="font-weight: bold; font-size: 20px; margin-left: 50px"
+					id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" href="home"
+							style="color: white">Home</a></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" style="color: white"
+							id="navbarDropdownMenuLin" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> About us </a>
+							<div class="dropdown-menu bg-danger"
+								aria-labelledby="navbarDropdownMenuLin">
+								<a class="dropdown-item " href="history"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">History</a>
+								<a class="dropdown-item " href="info"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Information</a>
+								<a class="dropdown-item " href="mision"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Mission
+									& Vision</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" style="color: white"
+							id="navbarDropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Product </a>
+							<div class="dropdown-menu bg-danger"
+								aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item " href="life"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">life
+									insurence</a> <a class="dropdown-item " href="health"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Health
+									insurence</a> <a class="dropdown-item " href="child"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Child
+									insurence</a> <a class="dropdown-item " href="hazz"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Hazz
+									insurance</a> <a class="dropdown-item " href="pention"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Pension
+									insurance</a> <a class="dropdown-item " href="education"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Education
+								</a> <a class="dropdown-item " href="mohar"
+									onMouseOver="this.style.color='black'"
+									onMouseOut="this.style.color='white'" style="color: white;">Denmohar insurance</a>
+							</div></li>
+						<li class="nav-item"><a class="nav-link" href="#"
+							style="color: white">Notice</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact"
+							style="color: white">Contact Us</a></li>
+
+					</ul>
+
+				</div>
+			</nav>
+			<!-- 2nd header -->
+			
+		</header>
+		<!-- header compleate -->
+		
+		
+		
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<!-- conditional div 1  -->
+				<div th:if="${product}=='Life Insurance'"
+				style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per policy</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 12, 15</td>
+							</tr>
+							
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Maximum 55 years old</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Maximum 70 years old</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">8 to 9
+									years 50%, and 10 to 11 years 65%, 12 to 14 years 80%, and 15 to up years 95% profit</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									claim</th>
+								<td colspan="4">If the policyholder dies within the term of
+									the insurance, the sum assured is paid to the nominee (s) along
+									with the earned bonus.</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<!-- Conditional div 1  -->
+
+
+				<!-- 	conditional div 2 -->
+				<div th:if="${product}=='Health Insurance'"
+				style="color: black; font-size: 20px; margin-top: 15px">
+
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy </td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 12, 15</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Maximum 55 years old</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Maximum 70 years old</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Health Claim</th>
+								<td colspan="4">If you are seriously ill before the
+									insurance expires, then the exact amount of many will be spent
+									on your recovery</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">After successfully Finished Policy, the policy holder get  8 to 9
+									years 50%, and 10 to 11 years 65%, 12 to 14 years 80%, and 15 to up years 95% profit</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									claim</th>
+								<td colspan="4">If the policyholder dies within the term of
+									the insurance, the sum assured is paid to the nominee (s) along
+									with the earned bonus.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- conditional div 2 -->
+
+
+				<!-- Coditional div 3  -->
+				<div th:if="${product}=='Child Insurance'"
+					style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 12, 15</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Insurance holder 20 - 50 years. and child 6
+									month to 15 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Insurance holder 65 years. child Minimum 18
+									years and Maximum 25 years.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">After successfully Finished Policy, the policy holder get  8 to 9
+									years 50%, and 10 to 11 years 65%, 12 to 14 years 80%, and 15 to up years 95% profit</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									policyholder</th>
+								<td colspan="4">If the policyholder dies within the term of
+									the insurance, the sum assured is paid to the Children along
+									with the earned bonus.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									Child</th>
+								<td colspan="4">If the Child dies within the term of the
+									insurance, the sum assured is paid to the policyholder along
+									with the earned bonus.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- Coditional div 3 -->
+
+				<!-- Coditional div 4  -->
+				<div th:if="${product}=='Hazz Insurance'"
+					style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 100000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 12, 15,</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Maximum 55 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Maximum 70 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">After successfully Finished Policy, the policy holder get  8 to 9
+									years 50%, and 10 to 11 years 65%, 12 to 14 years 80%, and 15 to up years 95% profit</td>
+							</tr>
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									policyholder</th>
+								<td colspan="4">If the policyholder dies within the term of
+									the insurance, the sum assured is paid to the nominiee along
+									with the earned bonus.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- Coditional div 4 -->
+
+				<!-- Coditional div 5  -->
+				<div th:if="${product}=='Pention Insurance'"
+					style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">Minimum 5 years</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Maximum 55 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Maximum 60 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">Within 3 months of the end of the insurance
+									period, you will be able to receive 50% cash at a time and the
+									remaining 50% will be able to enjoy the benefits for 10 years
+									or as long as you live.</td>
+							</tr>
+					
+							
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									policyholder</th>
+								<td colspan="4">On the death of the policyholder within the
+									term of the insurance, ten times the annual pension is paid to
+									the nominee (s) on behalf of the heirs..</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<!-- conditional div 5 -->
+
+				<!-- Coditional div 6  -->
+				<div th:if="${product}=='Education Insurance'"
+					style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 15, years</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Insurance holder 20 - 50 years. and child 6
+									month to 15 years</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Insurance holder 60 years.(Maximum)</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Yearly</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">At Policy maturity, the Face Amount of the Policy plus Bonus(es) are paid.
+								 The money can be used to pay for his/her higher education.
+								  Or if he/she has already completed education,
+								   money may be very helpful to start his/her new career, 
+								   cover marriage expenses, or support other important events in life</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									policyholder</th>
+								<td colspan="4">If the premium payer (God forbid) dies
+									during the period of insurance, the premium will be waived for
+									the next period of the term and the child will be paid a
+									monthly stipend of Rs. The entire sum assured is paid at the
+									end of the term, including the bonus earned.</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<!-- conditional div 5 -->
+
+				<!-- Coditional div 7  -->
+				<div th:if="${product}=='Denmahar Insurance'"
+					style="color: black; font-size: 20px; margin-top: 15px">
+
+					<h2
+						style="color: olive; text-align: center; border-bottom: lime solid 2px; margin-top: 20px">
+						<span th:text="${product}"></span>
+					</h2>
+					<h4>Rules and Regulations</h4>
+					<table class="table table-bordered"
+						style="color: black; border: black solid 3px; font-weight: bold;">
+						<thead>
+							<tr
+								style="background-color: black; color: white; text-align: center; font-size: 23px">
+
+								<th colspan="3">Heading</th>
+								<th colspan="4">Description</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Insurance
+									amount</th>
+								<td colspan="4">Minimum 50000 tk.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Installment</th>
+								<td colspan="4">As per Policy</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Duration</th>
+								<td colspan="4">8, 10, 15 years</td>
+							</tr>
+							<tr>
+								<th colspan="2" Style="font-size: 20px; color: blue">Starting
+									age</th>
+								<td colspan="4">Insurance holder max age 50 years. and must
+									be married</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Maturity
+									age</th>
+								<td colspan="4">Insurance holder 70 years.(Maximum)</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Nominee
+								</th>
+								<td colspan="4">Must be the wife of the insurance holder</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Payment
+									method</th>
+								<td colspan="4">Half yearly, Yearly</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Profit</th>
+								<td colspan="4">If the premium payer and his wife survives
+									till the maturity of the insurance, the wife is paid with the
+									sum and earned bonus As per Policy Duration.</td>
+							</tr>
+							<tr>
+								<th colspan="3" Style="font-size: 20px; color: blue">Death
+									policyholder</th>
+								<td colspan="4">In case of death of the policyholder
+									(husband) during the term of insurance, the sum assured is paid
+									to the nominee (wife) along with the earned bonus.</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<!-- conditional div 6 -->
+			</div>
+		</div>
+	</div>
+
+	<!-- .site-header -->
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script
+		src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>
